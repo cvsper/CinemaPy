@@ -73,6 +73,7 @@ class listAll:
 		return self.titles
 				
 		system('open ', links[0])
+		
 def openVid(link):
 	ask = raw_input('would you like to watch now? : ')
 	if ask == 'yes':
