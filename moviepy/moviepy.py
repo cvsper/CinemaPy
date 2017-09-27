@@ -3,12 +3,15 @@ import requests
 # BeautifulSoup for parsing web data
 from bs4 import BeautifulSoup
 
+from os import system
+
 """
 This will be a web scraper for movies url vexmovies.org
 idk yet i may come back and make it a api for a site
 or just push it to some website with flask who knows what the
 future holds.
 """
+
 
 
 class Genre:
@@ -69,6 +72,12 @@ class listAll:
 
 		return self.titles
 				
+		system('open ', links[0])
+def openVid(link):
+	ask = raw_input('would you like to watch now? : ')
+	if ask == 'yes':
+		system('open ' + link)
+
 
 def main():
 	# The url that we will be scraping
@@ -108,7 +117,9 @@ def main():
 	try:
 		print('your video link is : ' + links[0])
 	except IndexError:
-		print("Title was not found")
+		print("Title was not found")		
+
+	openVid(links[0])
 
 if __name__ == '__main__':
 	main()
