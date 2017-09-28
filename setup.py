@@ -7,7 +7,7 @@ setup(
 	license='MIT',
 	install_requires=['requests','BeautifulSoup' ],
 	packages=find_packages(),
-	cripts='moviepy.py'
+	scripts='moviepy.py'
 
 
 	)
