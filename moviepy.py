@@ -2,8 +2,10 @@
 import requests
 # BeautifulSoup for parsing web data
 from bs4 import BeautifulSoup
-
+# for opening video
 from os import system
+#for creating flasgs
+import argparse
 
 """
 This will be a web scraper for movies url vexmovies.org
@@ -75,17 +77,20 @@ class listAll:
 		system('open ', links[0])
 		
 def openVid(link):
-	ask = raw_input('would you like to watch now? : ')
-	if ask == 'yes':
-		system('open ' + link)
+	system('open ' + link)
 
 
 def main():
+	parser= argparse.ArgumentParser(description='Web scraper for watching streamed movies..')
+	parser.add_argument('-m', '--movie', type=str, help='List movie title')
+	parser.add_argument('-w', '--watch', type=bool, help='Open movie in browser')
+	args = parser.parse_args()
+
 	# The url that we will be scraping
 	url = 'http://vexmovies.org/'
 
 	# I want to be able to just type in a movie name so we'll use raw_input
-	movie_title = raw_input('Enter movie title : ').replace(' ', '-')
+	movie_title = args.movie.replace(' ', '-')
 
 	# concatinate the url and movie_title for the final url
 	url = url + movie_title
@@ -119,8 +124,8 @@ def main():
 		print('your video link is : ' + links[0])
 	except IndexError:
 		print("Title was not found")		
-
-	openVid(links[0])
+	if args.watch == True:
+		openVid(links[0])
 
 if __name__ == '__main__':
 	main()
