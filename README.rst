@@ -6,9 +6,6 @@ MoviePy
 .. image:: https://travis-ci.org/cvsper/Mov.svg?branch=master
         :target: https://pypi.python.org/pypi/moviepy
 
-.. image:: https://img.shields.io/travis/cvsper/moviepy.svg
-        :target: https://travis-ci.org/cvsper/moviepy
-
 .. image:: https://readthedocs.org/projects/moviepy/badge/?version=latest
         :target: https://moviepy.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
