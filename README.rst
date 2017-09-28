@@ -3,7 +3,7 @@ MoviePy
 =======
 
 
-.. image:: https://img.shields.io/pypi/v/moviepy.svg
+.. image:: https://travis-ci.org/cvsper/Mov.svg?branch=master
         :target: https://pypi.python.org/pypi/moviepy
 
 .. image:: https://img.shields.io/travis/cvsper/moviepy.svg
