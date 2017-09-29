@@ -1,5 +1,5 @@
 =======
-MoviePy
+CinemaPy
 =======
 
 
