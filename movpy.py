@@ -23,10 +23,9 @@ or just push it to some website with flask who knows what the
 future holds.
 """
 
-# For adding flags we'll use argparser
 parser= argparse.ArgumentParser(description='''MoviePY:  Web scraper for watching streamed movies..''')
-parser.add_argument('-m', '--movie', type=str, help=':List movie title')
-parser.add_argument('-w', '--watch', type=bool, help=':To open movie in browser enter True')
+parser.add_argument('-m', '--movie', type=str,description=':List movie title' help='Enter movie title ')
+parser.add_argument('-w', '--watch', type=bool, help=':Open movie in browser')
 parser.add_argument('-s', '--search', type=str, help=':Search and recieve a list of movies')
 args = parser.parse_args()
 
@@ -38,7 +37,7 @@ class Genre:
 	def get_genre(self):
 
 		lists = []
-		pages = raw_input('How many pages would you like to search? : ')
+		pages = input('How many pages would you like to search? : ')
 		for x in range(int(pages)):
 			self.r = requests.get(self.url + str(x))
 			try:
@@ -49,7 +48,7 @@ class Genre:
 			for title in self.titles:
 				link = title.find_all('a')
 				for x in link:
-					print x.get('href')
+					print(x.get('href'))
 
 class yearList:
 	def __init__(self, year):
@@ -65,12 +64,12 @@ class yearList:
 		self.link = self.soup.find_all('a')
 		return self.link
 
-# This will loop threw every page and get the title 
+# This will loop threw every page and get the title
 class listAll:
 	def __init__(self):
 		self.url = 'http://vexmovies.org/page/'
 		lists = []
-		pages = raw_input('How many pages would you like to search? : ')
+		pages = input('How many pages would you like to search? : ')
 		for x in range(int(pages)):
 			self.r = requests.get(self.url + str(x))
 			try:
@@ -81,14 +80,13 @@ class listAll:
 			for title in self.titles:
 				link = title.find_all('a')
 				for x in link:
-					print x.get('href')
+					print(x.get('href'))
 
 	def get_titles(self):
 		self.titles = self.soup.find_all('div',{'class':'item'})
 		return self.titles
 		system('open ', links[0])
 
-# Return search results
 class Search:
 	def __init__(self):
 		self.url = 'http://vexmovies.org/'
@@ -113,9 +111,9 @@ class Search:
 			self.soup = BeautifulSoup(self.r.content, 'html.parser')
 		self.link = self.soup.find_all('div', {'class':'item'})
 		for link in self.link:
-			urls = link.find_all('img')
+			urls = link.find_all('a')
 			for url in urls:
-				print url.get('alt')
+				print url.get('href')
 
 	def pages(self):
 		try:
@@ -125,7 +123,7 @@ class Search:
 		self.link = self.soup.find_all('a', {'class':'previouspostslink'})
 		for link in self.link:
 			self.urls = link.get('href')
-			print self.urls	
+			print(self.urls)	
 
 def openVid(link):
 	system('open ' + link)
@@ -139,7 +137,7 @@ def main():
 	try:
 		movie_title = args.movie.replace(' ', '-')
 	except:
-		movie_title = raw_input('Enter your movie title : ').replace(' ', '-')
+		movie_title = input('Enter your movie title : ').replace(' ', '-')
 	# concatinate the url and movie_title for the final url
 	url = url + movie_title
 
@@ -165,11 +163,11 @@ def main():
 	
 	# print your results
 	try:
-		print('your preview link is : ' + links[1] + '\n')
+		print(('your preview link is : ' + links[1] + '\n'))
 	except IndexError:
 		pass
 	try:
-		print('your video link is : ' + links[0])
+		print(('your video link is : ' + links[0]))
 	except IndexError:
 		print("Title was not found")		
 	if args.watch == True:
@@ -178,7 +176,8 @@ def main():
 if __name__ == '__main__':
 	if args.search:
 		s = Search()
-		
+		url = s.search()
 		title = s.title()
+		print((str(s.title()) + ': ' + str(s.search())))
 	else:	
 		main()
