@@ -22,8 +22,6 @@ Example
 Enter your movie title with the following flag::
 
     python cinemapy.py -m 'pulp fiction' -w True
-Or
-	python cinemapy.py -s 'big hero'
 
 
 
