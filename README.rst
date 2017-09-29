@@ -25,6 +25,6 @@ Features
 
 Credits
 ---------
-Sevens
+Shamar Donaldson https://github.com/cvsper
 
 
