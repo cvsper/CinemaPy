@@ -17,18 +17,17 @@ Scarpe movie streaming urls
 * Free software: MIT license
 * Documentation: https://moviepy.readthedocs.io.
 
+Example
+=======
+Enter your movie title with the following flag::
+
+    python moviepy.py -s 'pulp fiction'	-w True
 
 Features
 --------
 
 * Scarpe urls and watch streaming movies
 
-
-Example
-=======
-Enter your movie title with the following flag::
-
-    python moviepy.py -s 'pulp fiction'	-w True
 
 Credits
 ---------
