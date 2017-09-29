@@ -10,10 +10,6 @@ MoviePy
         :target: https://moviepy.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/cvsper/moviepy/shield.svg
-     :target: https://pyup.io/repos/github/cvsper/moviepy/
-     :alt: Updates
-
 
 Scarpe movie streaming urls
 
@@ -25,7 +21,7 @@ Scarpe movie streaming urls
 Features
 --------
 
-* TODO
+* Scarpe urls and watch streaming movies
 
 Credits
 ---------

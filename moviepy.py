@@ -1,3 +1,12 @@
+
+# __  __            _                  
+#|  \/  | _____   _(_) ___ _ __  _   _ 
+#| |\/| |/ _ \ \ / / |/ _ \ '_ \| | | |
+#| |  | | (_) \ V /| |  __/ |_) | |_| |
+#|_|  |_|\___/ \_/ |_|\___| .__/ \__, |
+#                         |_|    |___/ 
+
+
 # requests for grabbing web pages
 import requests
 # BeautifulSoup for parsing web data
@@ -13,8 +22,6 @@ idk yet i may come back and make it a api for a site
 or just push it to some website with flask who knows what the
 future holds.
 """
-
-
 
 class Genre:
 	def __init__(self, cat):
@@ -81,17 +88,20 @@ def openVid(link):
 
 
 def main():
-	parser= argparse.ArgumentParser(description='Web scraper for watching streamed movies..')
-	parser.add_argument('-m', '--movie', type=str, help='List movie title')
-	parser.add_argument('-w', '--watch', type=bool, help='Open movie in browser')
+	parser= argparse.ArgumentParser(description='''MoviePY:  Web scraper for watching streamed movies..''')
+	parser.add_argument('-m', '--movie', type=str, help=':List movie title')
+	parser.add_argument('-w', '--watch', type=bool, help=':Open movie in browser')
+	parser.add_argument('-g', '--genre', type=str, help=':Select your genre')
 	args = parser.parse_args()
 
 	# The url that we will be scraping
 	url = 'http://vexmovies.org/'
 
-	# I want to be able to just type in a movie name so we'll use raw_input
-	movie_title = args.movie.replace(' ', '-')
-
+	# I want to be able to just type in a movie name so we'll use argsparser or raw_inpurt
+	try:
+		movie_title = args.movie.replace(' ', '-')
+	except:
+		movie_title = raw_input('Enter your movie title : ').replace(' ', '-')
 	# concatinate the url and movie_title for the final url
 	url = url + movie_title
 
