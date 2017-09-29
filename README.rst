@@ -21,7 +21,7 @@ Example
 =======
 Enter your movie title with the following flag::
 
-    python cinemapy.py -s 'pulp fiction'	-w True
+    python cinemapy.py -s 'pulp fiction' -w True
 
 Features
 --------
