@@ -25,7 +25,6 @@ Features
 
 Credits
 ---------
-
-.. _Sevens: https://github.com/cvsper
+Sevens
 
 
