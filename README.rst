@@ -23,10 +23,12 @@ Features
 
 * Scarpe urls and watch streaming movies
 
+
 Example
---------
-* Enter your movie title with the following flag::
-	python moviepy.py -s 'pulp fiction'
+=======
+Enter your movie title with the following flag::
+
+    python moviepy.py -s 'pulp fiction'	
 
 Credits
 ---------
