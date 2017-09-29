@@ -28,7 +28,7 @@ Example
 =======
 Enter your movie title with the following flag::
 
-    python moviepy.py -s 'pulp fiction'	
+    python moviepy.py -s 'pulp fiction'	-w True
 
 Credits
 ---------
