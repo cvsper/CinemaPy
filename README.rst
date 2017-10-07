@@ -12,10 +12,7 @@
 </div>
 
 
-=======
-CinemaPy
-=======
-
+## CinemaPy
 
 .. image:: https://travis-ci.org/cvsper/CinemaPy.svg?branch=master
         :target: https://pypi.python.org/pypi/moviepy
