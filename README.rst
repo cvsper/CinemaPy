@@ -1,3 +1,12 @@
+<h1 align="center">Tech Interview Handbook</h1>
+
+<div align="center">
+  <a href="https://dribbble.com/shots/3831443-Tech-Interview-Handbook">
+    <img src="cinemapy.png" alt="cinemapy" width="400"/>
+    </a>
+</div>
+
+
 =======
 CinemaPy
 =======
