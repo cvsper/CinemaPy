@@ -24,10 +24,14 @@ Enter your movie title with the following flag::
     python cinemapy.py -m 'pulp fiction' -w True
 
 
-Enter your movie title with the following flag::
+Enter your movie title with the following flag to search for titles avaliable::
 
-    python cinemapy.py -s 'pulp fiction' -w True    
+    python cinemapy.py -s 'pulp fiction'  
 
+
+Enter your movie title with the following flag -r to search for just recommondations::
+
+    python cinemapy.py -r 'pulp fiction'  
 
 
 Features

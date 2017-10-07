@@ -25,13 +25,13 @@ future holds.
 """
 
 # For adding flags we'll use argparser
-parser= argparse.ArgumentParser(description='''MoviePY:  Web scraper for watching streamed movies..''')
+parser= argparse.ArgumentParser(description='''CinemaPy:  Web scraper for watching streamed movies..''')
 parser.add_argument('-m', '--movie', type=str, help=':List movie title')
 parser.add_argument('-w', '--watch', type=bool, help=':To open movie in browser enter True')
 parser.add_argument('-s', '--search', type=str, help=':Search and recieve a list of movies')
 parser.add_argument('-y', '--year', type=int, help=':Enter a year and get a list of movies to watch from that year')
 parser.add_argument('-g', '--genre', type=str, help=':List movies by genre')
-parser.add_argument('-r', '--recommend', type=str, help=':List movies recommendations')
+parser.add_argument('-r', '--recommend', type=str, help=':List movie recommendations')
 
 args = parser.parse_args()
 
@@ -110,7 +110,7 @@ class Search:
 		for link in self.link:
 			urls = link.find_all('a')
 			for url in urls:
-				print url.get('href')
+				print url.get('- ' + 'href')
 
 	def title(self):
 		try:
@@ -185,8 +185,10 @@ if __name__ == '__main__':
 	if args.search:
 		s = Search()
 		title = s.title()
-		print('================'+ 'RECOMMENDATIONS'+'===============')
-		recommend.main(args.search)
+		print('================'+ 'MOVIE RECOMMENDATIONS'+'===============')
+		recommend.movie(args.search)
+		print('================'+ 'TV SHOW RECOMMENDATIONS'+'===============')
+		recommend.shows(args.search)
 	elif args.recommend:
 		recommend.main(args.recommend)	
 	else:	
