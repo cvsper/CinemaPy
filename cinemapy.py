@@ -1,11 +1,10 @@
-
-# __  __            _                  
-#|  \/  | _____   _(_) ___ _ __  _   _ 
-#| |\/| |/ _ \ \ / / |/ _ \ '_ \| | | |
-#| |  | | (_) \ V /| |  __/ |_) | |_| |
-#|_|  |_|\___/ \_/ |_|\___| .__/ \__, |
-#                         |_|    |___/ 
-
+ ##################################################                               
+#	 _____  _                        _____      	#
+#	|     ||_| ___  ___  _____  ___ |  _  | _ _ 	#
+#	|   --|| ||   || -_||     || .'||   __|| | |	#
+#	|_____||_||_|_||___||_|_|_||__,||__|   |_  |	#
+#	                                       |___|	#
+# ################################################# #
 
 # requests for grabbing web pages
 import requests
@@ -15,6 +14,8 @@ from bs4 import BeautifulSoup
 from os import system
 #for creating flasgs
 import argparse
+
+import recommend
 
 """
 This will be a web scraper for movies url vexmovies.org
@@ -28,6 +29,10 @@ parser= argparse.ArgumentParser(description='''MoviePY:  Web scraper for watchin
 parser.add_argument('-m', '--movie', type=str, help=':List movie title')
 parser.add_argument('-w', '--watch', type=bool, help=':To open movie in browser enter True')
 parser.add_argument('-s', '--search', type=str, help=':Search and recieve a list of movies')
+parser.add_argument('-y', '--year', type=int, help=':Enter a year and get a list of movies to watch from that year')
+parser.add_argument('-g', '--genre', type=str, help=':List movies by genre')
+parser.add_argument('-r', '--recommend', type=str, help=':List movies recommendations')
+
 args = parser.parse_args()
 
 class Genre:
@@ -51,6 +56,7 @@ class Genre:
 				for x in link:
 					print x.get('href')
 
+#get list of movies by year
 class yearList:
 	def __init__(self, year):
 		self.url = 'http://vexmovies.org/release-year/'
@@ -178,7 +184,10 @@ def main():
 if __name__ == '__main__':
 	if args.search:
 		s = Search()
-		
 		title = s.title()
+		print('================'+ 'RECOMMENDATIONS'+'===============')
+		recommend.main(args.search)
+	elif args.recommend:
+		recommend.main(args.recommend)	
 	else:	
 		main()
