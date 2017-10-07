@@ -24,6 +24,11 @@ Enter your movie title with the following flag::
     python cinemapy.py -m 'pulp fiction' -w True
 
 
+Enter your movie title with the following flag::
+
+    python cinemapy.py -s 'pulp fiction' -w True    
+
+
 
 Features
 --------
