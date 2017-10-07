@@ -3,7 +3,7 @@ CinemaPy
 =======
 
 
-.. image:: https://travis-ci.org/cvsper/Mov.svg?branch=master
+.. image:: https://travis-ci.org/cvsper/CinemaPy.svg?branch=master
         :target: https://pypi.python.org/pypi/moviepy
 
 .. image:: https://readthedocs.org/projects/moviepy/badge/?version=latest
